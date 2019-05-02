@@ -21,7 +21,7 @@ def post_message
   allow(Time).to receive(:now).and_return(@time_now)
   click_link 'New post'
   fill_in 'Message', with: 'Hello, World!'
-  click_button 'Submit'
+  click_button 'Post'
 end
 
 def sign_in
