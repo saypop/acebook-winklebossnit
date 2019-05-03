@@ -1,6 +1,29 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+      <div>
 
-  <%= form.submit "Submit" %>
-<% end %>
+        <h3> "Truly wonderful the mind of a child is" </h3>
+        <%= form_for @post do |form| %>
+        <br>
+          <%= form.label :message %>:
+          <br>
+
+          <%= form.text_area :message %>
+          <br>
+          <br>
+          <%= form.submit "Post", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </center>
+  </body>
+</html>

@@ -15,7 +15,7 @@
 
   <% if user_signed_in? %>
    <!--Navigation Bar-->
-    <nav class="navbar navbar-light bg-light d-flex">
+    <nav class="navbar navbar-dark bg-primary">
       <div class="container">
         <div class="logo">
           <a class="navbar-brand" href="/posts">
@@ -26,10 +26,10 @@
         <div class="m-auto">
           <form class="form-inline search-form">
             <div>
-            <%= link_to "All Users", users_path %>
-            <%= link_to "New post", new_post_path %>
-            <%= link_to "My friends", user_path(current_user.id) %>
-            <%= link_to "My Requests", user_friend_requests_path(current_user.id) %>
+            <%= link_to "All Users", users_path, class: "btn btn-outline-light" %>
+            <%= link_to "New post", new_post_path, class: "btn btn-outline-light" %>
+            <%= link_to "My friends", user_path(current_user.id), class: "btn btn-outline-light" %>
+            <%= link_to "My Requests", user_friend_requests_path(current_user.id), class: "btn btn-outline-light" %>
             </div>
           </form>
         </div>
@@ -48,7 +48,7 @@
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
 
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class:'btn btn-primary'  %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
