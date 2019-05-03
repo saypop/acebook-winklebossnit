@@ -12,30 +12,33 @@
 
   <body>
 
+  <div class="stars">
+    <div class="twinkling">
+      <div class="clouds">
 
-  <% if user_signed_in? %>
-   <!--Navigation Bar-->
-    <nav class="navbar navbar-dark bg-primary">
-      <div class="container">
-        <div class="logo">
-          <a class="navbar-brand" href="/posts">
-            <i class="fab fa-jedi-order"></i>
-            WookieBook
-          </a>
-        </div>
-        <div class="m-auto">
-          <form class="form-inline search-form">
-            <div>
-            <%= link_to "All Users", users_path, class: "btn btn-outline-light" %>
-            <%= link_to "New post", new_post_path, class: "btn btn-outline-light" %>
-            <%= link_to "My friends", user_path(current_user.id), class: "btn btn-outline-light" %>
-            <%= link_to "My Requests", user_friend_requests_path(current_user.id), class: "btn btn-outline-light" %>
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav>
-  <% end %>
+        <% if user_signed_in? %>
+        <!--Navigation Bar-->
+          <nav class="navbar navbar-dark bg-primary">
+            <div class="container">
+              <div class="logo">
+                <a class="navbar-brand" href="/posts">
+                 <i class="fab fa-jedi-order"></i>
+                  WookieBook
+                  </a>
+              </div>
+              <div class="m-auto">
+                <form class="form-inline search-form">
+                 <div>
+                  <%= link_to "All Users", users_path, class: "btn btn-outline-light" %>
+                  <%= link_to "New post", new_post_path, class: "btn btn-outline-light" %>
+                  <%= link_to "My friends", user_path(current_user.id), class: "btn btn-outline-light" %>
+                  <%= link_to "My Requests", user_friend_requests_path(current_user.id), class: "btn btn-outline-light" %>
+                </div>
+                </form>
+              </div>
+              </div>
+          </nav>
+        <% end %>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -55,5 +58,8 @@
     <% end %>
     </p>
     <%= yield %>
+    </div>
+    </div>
+    </div>
   </body>
 </html>
